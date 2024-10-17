@@ -1,4 +1,7 @@
-import sample from '../images/video_background.mp4'; // Ensure the correct import path for the video
+import sample from '../images/video_background.mp4'; 
+import background from '../images/video_background.mp4'; 
+
+import posterImage from '../images/background.jpg'; // Add a poster image
 
 export default function Hero() {
   return (
@@ -10,6 +13,7 @@ export default function Hero() {
           muted
           playsInline
           preload="auto"
+          poster={posterImage}  // Poster image to display before the video loads
           style={{
             position: 'absolute',
             top: 0,
@@ -18,7 +22,7 @@ export default function Hero() {
             height: '100%',
             objectFit: 'cover',
             zIndex: -1,
-            pointerEvents: 'none', // Disables interaction with the video
+            pointerEvents: 'none',
           }}
         >
           <source src={sample} type="video/mp4" />
@@ -39,7 +43,7 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
       >
-        {/* Additional decorative elements can go here if needed */}
+        {/* Additional decorative elements */}
       </div>
     </div>
   );
