@@ -3,19 +3,22 @@ import sample from '../images/video_background.mp4'; // Ensure the correct impor
 export default function Hero() {
   return (
     <div className="relative isolate h-screen px-6 pt-14 lg:px-8">
-        <div className="absolute inset-0   "> {/* Adjust opacity as needed */}
+      <div className="absolute inset-0">
         <video
           autoPlay
           loop
           muted
+          playsInline
+          preload="auto"
           style={{
             position: 'absolute',
             top: 0,
             left: 0,
             width: '100%',
-            height: '100%', // Set height to 100% to cover the full viewport
-            objectFit: 'cover', // Ensure the video covers the area
-            zIndex: -1
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: -1,
+            pointerEvents: 'none', // Disables interaction with the video
           }}
         >
           <source src={sample} type="video/mp4" />
@@ -23,7 +26,7 @@ export default function Hero() {
         </video>
       </div>
       <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-        <div className="text-center z-10"> 
+        <div className="text-center z-10">
           <h1 className="font-rozha text-balance text-4xl tracking-tight text-white sm:text-7xl z-10">
             Coffee Lake
           </h1>
